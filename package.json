@@ -1,0 +1,62 @@
+{
+  "name": "vips",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "@livechat/accounts-sdk": "^1.3.1",
+    "firebase": "^6.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^6.10.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1"
+  },
+  "scripts": {
+    "deploy": "firebase deploy",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "start": "HTTPS=true react-scripts start",
+    "start:functions": "firebase serve --only functions",
+    "test": "react-scripts test"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 80,
+    "trailingComma": "es5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
